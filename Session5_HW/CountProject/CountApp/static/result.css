@@ -1,0 +1,36 @@
+* {
+    font-family: 'Gamja Flower', cursive;
+    display:flex;
+}
+
+body {
+    margin:30px;
+    width:100%;
+    height:100%;
+    background-color:antiquewhite;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+}
+
+.area {
+    width:50%;
+    top:300px;
+    border:4px groove burlywood;
+    flex-direction:column;
+    border-radius:30px;
+    justify-content: center;
+    align-items:center;
+    background-color: mintcream;
+    box-shadow: 12px 12px 2px 1px gray;
+}
+
+.area p {
+    font-weight:bold;
+    margin-top:30px;
+    font-size:25px;
+}
+
+#info1, #info2, #info3, #info4 {
+    color:mediumvioletred;
+}

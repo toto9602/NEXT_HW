@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title></title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'result.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="area">
+        <div class="n1">
+            <p id="info1">글자수: </p>
+            <p>{{total_len}}</p>
+        </div>
+        <div class="n2">
+            <p id="info2">입력한 텍스트: </p>
+            <p>{{total_text}}</p>
+        </div>
+        <div class="n3">
+            <p id="info3">공백 제외 글자수: </p>
+            <p>{{texts}}</p>
+        </div>
+        <div>
+            <p id="info4">단어 개수: </p>
+            <p>{{count_word}}</p>
+        </div>
+    </div>
+</body>
+
+</html>
