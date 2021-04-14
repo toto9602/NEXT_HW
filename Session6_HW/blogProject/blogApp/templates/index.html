@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Pacifico&display=swap" rel="stylesheet">
+    <title></title>
+</head>
+
+<body>
+    <!-- {% for article in articles %}
+    <ul>
+        <li>
+            <a href="{% url 'detail' article.pk %}">{{ article.title }}</a>
+        </li>
+    </ul>
+    {% endfor %} -->
+    <div class="title">
+        <h1>My Blog</h1>
+    </div>
+    <div class="links">
+        <div class="contents">
+            <h3>Categories</h3>
+            <div class="buttons">
+                <a href="{% url 'movie' %}">영화_글 개수: {{movie_count}}</a>
+                <a href="{% url 'drama' %}">드라마_글 개수: {{drama_count}}</a>
+                <a href="{% url 'programming' %}">프로그래밍_글 개수: {{programming_count}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="new">
+        <a id="write" href="{% url 'new' %}">글 쓰러 가기!</a>
+    </div>
+</body>
+
+</html>

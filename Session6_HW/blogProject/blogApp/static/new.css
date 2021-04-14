@@ -1,0 +1,43 @@
+* {
+    display:flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    background-color:lightyellow;
+    justify-content: center;
+}
+
+.headline {
+    width:25%;
+    margin-left:5%;
+    margin-right: 50px;
+}
+
+#new {
+    margin-left:5%;
+    border-bottom:1px solid black;
+    margin-right:25%;
+}
+
+form {
+    width:30%;
+    margin-left:5%;
+    margin-bottom:5%;
+    font-size:20px;
+}
+
+select {
+    margin-bottom:10px;
+    font-size:15px;
+    background-color:white;
+}
+
+input, textarea {
+    background-color:white;
+    font-size:15px;
+}
+button {
+    margin-top:20px;
+    font-size:15px;
+    width:15%;
+    margin-left:5%
+}

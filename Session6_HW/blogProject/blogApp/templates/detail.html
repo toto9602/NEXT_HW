@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Pacifico&display=swap" rel="stylesheet">
+    <title></title>
+</head>
+
+<body>
+    <div class="whole">
+        <div class="title">
+            <p class="sub">글 제목</p>
+            <p class="content">{{article.title}}</p>
+        </div>
+        <div class="time">
+            <p class="sub">작성 시각</p>
+            <p class="content">{{article.written_time}}</p>
+        </div>
+        <div class="article">
+            <p class="content">{{article.article}}</p>
+        </div>
+    </div>
+    <div class="home">
+        <a href="{% url 'index' %}">홈 화면으로</a>
+    </div>
+
+</body>
+
+</html>
