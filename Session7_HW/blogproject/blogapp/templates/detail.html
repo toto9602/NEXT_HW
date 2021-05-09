@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <title></title>
+</head>
+
+<body>
+    <div class="box">
+        <h2>To-Do</h2>
+        <div class="text">
+            <p>{{ post.title }}</p>
+        </div>
+    </div>
+    <div class="box">
+        <h2>Detail</h2>
+        <div class="text">
+            <p>{{ post.content }}</p>
+        </div>
+    </div>
+    <div class="box">
+        <h2>Due_Date</h2>
+        <div class="text">
+            <p>{{ post.date }}</p>
+        </div>
+    </div>
+    <div class="buttons">
+    <a href="{% url 'home' %}">홈 화면으로</a>
+    <a href="{% url 'edit' post.pk %}">수정하기</a>
+    <a href="{% url 'delete' post.pk %}">삭제하기</a>
+    </div>
+</body>
+
+</html>

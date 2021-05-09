@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <title></title>
+</head>
+
+<body>
+    <div class="head">
+        <h1>To-Do List</h1>
+    </div>
+    <div class="list">
+        <ul>
+            {% for post in posts %}
+            <li class="item">
+                <a class="content" href="{% url 'detail' post.pk %}">{{ post.title }}</a>
+                <p id="due">마감 기한: {{ post.date }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="add">
+    <a id="add_button" href="{% url 'new' %}">할 일 추가하기</a>
+    </div>
+</body>
+
+</html>

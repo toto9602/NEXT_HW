@@ -1,0 +1,48 @@
+* {
+    display:flex;
+    box-sizing: border-box;
+    background-color: #ffff99;
+    flex-direction:column;
+}
+
+.box {
+    margin-left:5%;
+    margin-bottom:10px;
+}
+.box h2 {
+    font-family: 'Itim', cursive;
+    font-size:30px;
+}
+
+.text {
+    width:40%;
+    border:1px solid #ffdf80;
+    border-radius:10px;
+    background-color:#ffdf80;
+    box-shadow:10px 5px 5px gray;
+}
+
+.text p {
+    font-family: 'Jua', sans-serif;
+    font-size:20px;
+    background-color:#ffdf80;
+}
+
+p {
+    margin-left:10px;
+}
+
+.buttons {
+    flex-direction: row;
+    margin:35px 0px 0px 10px;
+
+}
+
+.buttons a {
+    font-size:25px;
+    font-family: 'Jua', sans-serif;
+    margin:0px 50px 0px 0px;
+    color:black;
+
+
+}
