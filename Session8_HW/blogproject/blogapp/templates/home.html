@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block css %} 
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="head">
+        <h1>To-Do List</h1>
+    </div>
+    <div class="list">
+        <ul class="l_items">
+            {% for post in posts %}
+            <li class="item">
+                <a class="content" href="{% url 'detail' post.pk %}">{{ post.title }}</a>
+                <p id="due">마감 기한: {{ post.date }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="add">
+    <a id="add_button" href="{% url 'new' %}">할 일 추가하기</a>
+    </div>
+{% endblock %}
