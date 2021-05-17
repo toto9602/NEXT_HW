@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    {% load socialaccount %}
+    {% providers_media_js %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    {% block css %}
+
+    {% endblock css %}
+    <title></title>
+</head>
+
+<body>
+    <nav class="bar">
+        <ul class="in_bar">
+                <li>
+                    <a class="b_content" href="{% url 'home' %}">Home</a>
+                </li>
+            {% if user.is_authenticated %}
+                <li>
+                    <a class="b_content" href="{% url 'new' %}">Add-Post</a>
+                </li>
+                <li>
+                    <a class="b_content">Hello, {{ user.username }}</a>
+                </li>
+                <li>
+                    <a class="b_content" href="{% url 'mypage' %}">My Page</a>
+                </li>
+                <li>
+                    <a class="b_content" href="{% url 'logout' %}">Log-Out</a>
+                </li>
+            {% else %}
+                <li>
+                    <a class="b_content" href="{% url 'login' %}">Log-In</a>
+                </li>
+                <li id="kakao">
+                    <img src="https://t1.kakaocdn.net/kakaocorp/admin/main-banner/579">
+                    <a class="b_content" id="kakao_text" href="{% provider_login_url 'kakao' %}">Kakao Log-In</a>
+                </li>
+                <li>
+                    <a class="b_content" href="{% url 'signup' %}">Sign-Up</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% block content %}
+
+    {% endblock content %}
+</body>
+
+</html>
