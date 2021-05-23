@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'mypage.css' %}">
+{% endblock css %} 
+
+{% block content %} 
+
+<div class="head">
+    <h3>My Posts</h3>
+</div>
+<div class="list">
+    <ul class="l_items">
+        {% for my_post in my_posts %}
+        <li class="item">
+            <p class="content">{{ my_post.title }}</p>
+            <p id="due">마감 기한: {{ my_post.date }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="head">
+    <h3>My Comments</h3>
+</div>
+<div class="list">
+    <ul class="l_items">
+        {% for my_comment in my_comments %}
+        <li class="item">
+            <p class="content">{{ my_comment.content }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %} 
