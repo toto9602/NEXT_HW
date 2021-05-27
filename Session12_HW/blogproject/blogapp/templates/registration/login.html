@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'registration.css' %}">
+{% endblock css %}
+{% block content %}
+<div class="head">
+    <h1>Log-In</h1>
+</div>
+<div class="whole">
+    <form method="POST">
+        <div class="form_box">
+            {% csrf_token %}
+            <input type="text" id="username" name="username" placeholder="ID" onkeydown="checkInputValid()" />
+            <input type="password" name="password" placeholder="PASSWORD">
+        </div>
+        <div class="s_box">
+            <button type="submit">Log-In!</button>
+        </div>
+    </form>
+</div>
+{% if error %}
+<h3>{{ error}}</h3>
+{% endif %}
+<script type = "text/javascript" src = "{%static 'js/login.js' %}"></script>
+
+
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'edit_new.css' %}">
+{% endblock css %}
+
+{% block content %}
+<div class="head">
+    <h1>ADD-POST</h1>
+</div>
+<div class="whole">
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form_box">
+            <div class="input">
+                <label for="title">To-Do</label>
+                <input type="text" id="title" name="title" placeholder="할 일">
+            </div>
+            <div class="input">
+                <label for="content">Detail</label>
+                <textarea name="content" id="content" cols="30" rows="10" placeholder="세부 내용" onkeyup="count_text()" onkeydown="count_text()" onkeypress="count_text()"></textarea>
+            </div>
+            <div class="text_count">
+                <p>글자 수:</p>
+                <input type="number" id="count" value="0" readonly>
+            </div>
+            <div class="input">
+                <label for="date">Due-Date</label>
+                <input type="date" id="date" name="date" placeholder="마감 기한">
+            </div>
+        </div>
+        <div class="s_box">
+            <button type="submit">작성하기</button>
+        </div>
+    </form>
+</div>
+
+<script type = "text/javascript" src = "{% static 'js/new.js' %}"></script>
+{% endblock content %}
